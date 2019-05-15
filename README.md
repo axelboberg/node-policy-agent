@@ -5,7 +5,7 @@ A framework for creating authorization policies. Loosely inspired by [OPA](https
 ## Example usage
 
 ```javascript
-  const { Agent, should } = require(node-policy-agent)
+  const { Agent, should } = require('node-policy-agent')
 
   const policy = [
     // /api/users/:id
