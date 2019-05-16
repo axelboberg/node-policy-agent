@@ -79,7 +79,7 @@ Policies are defined by a set of rules. Each rule is a function that processes t
        */
       (input, output) => {
         output.userIsAlice = input.username === 'Alice'
-        return onput.username === 'Alice'
+        return input.username === 'Alice'
       }
     ]
   ]
