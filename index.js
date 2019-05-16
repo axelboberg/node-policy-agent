@@ -35,6 +35,7 @@ class Agent {
    */
   authorize (...args) {
     let input,
+        output = {},
         policy = this._policy || [],
         opts = this._opts || {}
     
@@ -56,7 +57,7 @@ class Agent {
       let granted = true
 
       for (let func of block) {
-        const res = func(input)
+        const res = func(input, output)
 
         /**
          * Break as soon as a policy
@@ -75,7 +76,10 @@ class Agent {
     }
 
     if (opts.detailedResponse) {
-      const res = { granted: !!grantedBy }
+      const res = {
+        granted: !!grantedBy,
+        output: output
+      }
 
       if (grantedBy) res.policy = grantedBy
       return res

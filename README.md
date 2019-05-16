@@ -61,6 +61,30 @@ Options for both the constructor and `.authorize()`.
 }
 ```
 
+### Custom rules  
+Policies are defined by a set of rules. Each rule is a function that processes the input value and returns a boolean whether or not the rule passed. The optional `output` argument is an object to use for any output data that should be sent back to `.authorize()` if the option `detailedResponse` is set to `true`, if set to `false`, `output` will not be accessible.
+
+```javascript
+  const myPolicy = [
+    [
+      /**
+       * Rule without output
+       */
+      input => {
+        return input.username === 'Alice'
+      },
+
+      /**
+       * Rule with output
+       */
+      (input, output) => {
+        output.userIsAlice = input.username === 'Alice'
+        return onput.username === 'Alice'
+      }
+    ]
+  ]
+```
+
 ### Built in rules  
 The exported `require('node-policy-agent').should` contains the following pre-built rules:
 
