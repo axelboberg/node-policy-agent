@@ -21,5 +21,5 @@ const input = {
 const agent = new Agent(_policy, { detailedResponse: true })
 
 test('output', () => {
-  expect(agent.authorize(input).output.foo).toBe('bar')
+  expect(agent.authorize(input)).resolves.toHaveProperty('output.foo', 'bar')
 })

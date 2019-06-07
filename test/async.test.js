@@ -9,7 +9,11 @@ const _policy = [
   [
     should.matchUri('$input.path', '/test'),
     should.equal('$input.method', 'GET'),
-    should.contain('$input.scopes', 'user-read')
+    input => {
+      return new Promise(resolve => {
+        setTimeout(() => resolve(true), 200)
+      })
+    }
   ]
 ]
 
@@ -24,6 +28,6 @@ const input = {
 
 const agent = new Agent(_policy)
 
-test('simple authorization', () => {
+test('execute an asynchronous rule', () => {
   expect(agent.authorize(input)).resolves.toBe(true)
 })

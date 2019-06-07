@@ -14,17 +14,20 @@ class Agent {
    * Authorize some input data
    * 
    * @param { Object } input
+   * @returns { Promise }
    *//**
    * Authorize some input data
    * 
    * @param { Object } input
    * @param { Object } opts 
+   * @returns { Promise }
    *//**
    * Authorize some input data
    * using a policy
    * 
    * @param { Object } input
    * @param { Array<Array<Function>> } policy
+   * @returns { Promise }
    *//**
    * Authorize some input data
    * using a policy
@@ -32,8 +35,9 @@ class Agent {
    * @param { Object } input
    * @param { Array<Array<Function>> } policy
    * @param { Object } opts 
+   * @returns { Promise }
    */
-  authorize (...args) {
+  async authorize (...args) {
     let input,
         output = {},
         policy = this._policy || [],
@@ -57,7 +61,7 @@ class Agent {
       let granted = true
 
       for (let func of block) {
-        const res = func(input, output)
+        const res = await func(input, output)
 
         /**
          * Break as soon as a policy
