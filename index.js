@@ -37,7 +37,7 @@ class Agent {
    * @param { Object } opts 
    * @returns { Promise }
    */
-  async authorize (...args) {
+  authorize (...args) {
     let input,
         output = {},
         policy = this._policy || [],
@@ -61,7 +61,7 @@ class Agent {
       let granted = true
 
       for (let func of block) {
-        const res = await func(input, output)
+        const res = func(input, output)
 
         /**
          * Break as soon as a policy
