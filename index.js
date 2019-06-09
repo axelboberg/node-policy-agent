@@ -14,28 +14,24 @@ class Agent {
    * Authorize some input data
    * 
    * @param { Object } input
-   * @returns { Promise }
    *//**
    * Authorize some input data
    * 
    * @param { Object } input
-   * @param { Object } opts 
-   * @returns { Promise }
-   *//**
-   * Authorize some input data
-   * using a policy
-   * 
-   * @param { Object } input
-   * @param { Array<Array<Function>> } policy
-   * @returns { Promise }
+   * @param { Object } opts
    *//**
    * Authorize some input data
    * using a policy
    * 
    * @param { Object } input
    * @param { Array<Array<Function>> } policy
-   * @param { Object } opts 
-   * @returns { Promise }
+   *//**
+   * Authorize some input data
+   * using a policy
+   * 
+   * @param { Object } input
+   * @param { Array<Array<Function>> } policy
+   * @param { Object } opts
    */
   authorize (...args) {
     let input,
