@@ -2,9 +2,6 @@
 
 A framework for creating authorization policies. Loosely inspired by [OPA](https://www.openpolicyagent.org).
 
-## Changelog for v.1.0.0  
-- The entire library is now made asynchronous, rules may now return promises and `.authorize()` will always return a `Promise`.
-
 ## Example usage
 
 ```javascript
@@ -33,7 +30,7 @@ A framework for creating authorization policies. Loosely inspired by [OPA](https
 
   const myAgent = new Agent(policy)
 
-  myAgent.authorize({
+  const granted = myAgent.authorize({
     path: '/api/foo/username',
     method: 'GET',
     user: {
@@ -43,8 +40,8 @@ A framework for creating authorization policies. Loosely inspired by [OPA](https
       ]
     }
   })
-    .then(granted => console.log(granted))
-    // Will print 'true'
+
+  // granted === true
 ```
 
 ## API  
