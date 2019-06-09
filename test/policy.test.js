@@ -25,5 +25,5 @@ const input = {
 const agent = new Agent(_policy)
 
 test('simple authorization', () => {
-  expect(agent.authorize(input)).resolves.toBe(true)
+  expect(agent.authorize(input)).toBe(true)
 })
