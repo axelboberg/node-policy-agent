@@ -13,8 +13,8 @@
   },
   "author": "Axel Boberg",
   "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {
-    "jest": "^24.9.0"
-  }
+  "dependencies": {
+    "jest": "^26.0.1"
+  },
+  "devDependencies": {}
 }
