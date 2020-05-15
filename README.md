@@ -1,3 +1,5 @@
+![Test](https://github.com/axelboberg/node-policy-agent/workflows/Test/badge.svg)
+
 # node-policy-agent
 
 A framework for creating authorization policies. Loosely inspired by [OPA](https://www.openpolicyagent.org).
