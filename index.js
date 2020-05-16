@@ -1,5 +1,6 @@
 /**
- * Axel Boberg © 2019
+ * @author Axel Boberg <hello@axelboberg.se>
+ * @copyright Axel Boberg © 2019
  */
 
 const should = require('./lib/should')
@@ -36,11 +37,11 @@ class Agent {
   authorize (...args) {
     let input,
         output = {},
-        policy = this._policy || [],
-        opts = this._opts || {}
+        policy = this._policy || [],
+        opts = this._opts || {}
     
-    /**
-     * Extract parameters from arguments
+    /*
+     Extract parameters from arguments
      */
     if (args.length === 1) input = args[0]
     if (args.length === 2 && Array.isArray(args[1])) [ input, policy ] = args
@@ -59,9 +60,9 @@ class Agent {
       for (let func of block) {
         const res = func(input, output)
 
-        /**
-         * Break as soon as a policy
-         * has failed to prove true
+        /*
+         Break as soon as a policy
+         has failed to prove true
          */
         if (!res) {
           granted = false
