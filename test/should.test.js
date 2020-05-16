@@ -20,8 +20,12 @@ test('does not match regex', () => {
   expect(should.matchRegex('bar', /foo/)()).toBe(false)
 })
 
-test('matches object', () => {
+test('matches ordered object', () => {
   expect(should.matchObject({'foo': 'bar'}, {'foo': 'bar'})()).toBe(true)
+})
+
+test('matches unordered object', () => {
+  expect(should.matchObject({'foo': 'bar', 'baz': 'qux'}, {'baz': 'qux', 'foo': 'bar'})()).toBe(true)
 })
 
 test('does not match object', () => {
